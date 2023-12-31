@@ -1,5 +1,9 @@
-import React from 'react';
-
+// 1. 
 export const GifExpertApp = () => {
-   return <div></div>;
+   //ePeisepz0RLx7wGhW5tKRqHyZg2TEYUW
+   return (
+      <>
+         <h1>GifExpertApp</h1>
+      </>
+   );
 };
