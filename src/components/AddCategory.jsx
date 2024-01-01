@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-export const AddCategory = () => {
+// Este warning se muestra porque no se han configurado prop-types para este prop, desde el archivo .eslintrc.cjs se configura
+export const AddCategory = ({ setCategories }) => {
    // Manejar estado del input
-   const [inputValue, setInputValue] = useState('One Punch');
+   const [inputValue, setInputValue] = useState('');
 
    const onInputChange = (event) => {
       //   console.log(event.target.value);
@@ -14,11 +15,22 @@ export const AddCategory = () => {
    const onSubmit = (event) => {
       // Evitar el evento de recarga del navegador por defecto
       event.preventDefault();
-      console.log(inputValue);
+
+      // Validamos que si al quitar espacios al inicio y fin nos dá <= 1, no lo agregue a la lista
+      if (inputValue.trim().length < 1) return;
+      // Actualizar el Padre desde el Hijo usando las props (categories,setCategories)
+      //   setCategories([...categories, inputValue]);
+      // Actualizar el Padre desde el Hijo usando la prop (setCategories)
+      setCategories((cat) => [inputValue, ...cat]);
+
+      // Limpiar la caja de texto
+      setInputValue('');
    };
 
    return (
-      <form onSubmit={(event) => onSubmit(event)}>
+      // Forma larga de hacerlo
+      //   <form onSubmit={(event) => onSubmit(event)}>
+      <form onSubmit={onSubmit}>
          <input
             type='text'
             placeholder='Buscar Gifs'
