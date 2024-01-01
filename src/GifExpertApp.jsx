@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AddCategory } from './components/AddCategory';
 
 // 1. Punto de entrada a la App
 export const GifExpertApp = () => {
@@ -18,7 +19,8 @@ export const GifExpertApp = () => {
          {/* Título */}
          <h1>GifExpertApp</h1>
 
-         {/* Input */}
+         {/* 3. Input */}
+         <AddCategory />
 
          {/* Listado de Gifs */}
          <button onClick={onAddCategory}>Agregar</button>
