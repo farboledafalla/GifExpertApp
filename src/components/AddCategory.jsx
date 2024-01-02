@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // Este warning se muestra porque no se han configurado prop-types para este prop, desde el archivo .eslintrc.cjs se configura
-export const AddCategory = ({ setCategories }) => {
+export const AddCategory = ({ onNewCategory }) => {
    // Manejar estado del input
    const [inputValue, setInputValue] = useState('');
 
@@ -21,7 +21,10 @@ export const AddCategory = ({ setCategories }) => {
       // Actualizar el Padre desde el Hijo usando las props (categories,setCategories)
       //   setCategories([...categories, inputValue]);
       // Actualizar el Padre desde el Hijo usando la prop (setCategories)
-      setCategories((cat) => [inputValue, ...cat]);
+      // setCategories((cat) => [inputValue, ...cat]);
+
+      // Pasarle el valor al padre para que el lo agrege al array
+      onNewCategory(inputValue.trim());
 
       // Limpiar la caja de texto
       setInputValue('');
