@@ -21,23 +21,13 @@ export const GifExpertApp = () => {
 
    return (
       <>
-         {/* Título */}
          <h1>GifExpertApp</h1>
 
-         {/* 3. Input */}
-         {/* Enviando la función del useState */}
-         {/* <AddCategory setCategories={setCategories} /> */}
          <AddCategory onNewCategory={(newValue) => onAddCategory(newValue)} />
 
-         {/* Listado de Gifs */}
-         {/* <button onClick={onAddCategory}>Agregar</button> */}
-         <ol>
-            {categories.map((category) => (
-               <GifGrid key={category} category={category} />
-            ))}
-         </ol>
-
-         {/* Gif Item */}
+         {categories.map((category) => (
+            <GifGrid key={category} category={category} />
+         ))}
       </>
    );
 };
