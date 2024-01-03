@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 // 1. Punto de entrada a la App
 export const GifExpertApp = () => {
@@ -31,13 +32,9 @@ export const GifExpertApp = () => {
          {/* Listado de Gifs */}
          {/* <button onClick={onAddCategory}>Agregar</button> */}
          <ol>
-            {categories.map((category) => {
-               return (
-                  <div key={category}>
-                     <li>{category}</li>
-                  </div>
-               );
-            })}
+            {categories.map((category) => (
+               <GifGrid key={category} category={category} />
+            ))}
          </ol>
 
          {/* Gif Item */}
