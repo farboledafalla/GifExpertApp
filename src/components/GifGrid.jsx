@@ -1,9 +1,11 @@
+import { getGifs } from '../helpers/getGifs';
+
 export const GifGrid = ({ category }) => {
-   // Petición http para traer la información del API
+   getGifs(category);
+
    return (
       <>
          <h3>{category}</h3>
-         <p>Hola Mundo</p>
       </>
    );
 };
