@@ -32,7 +32,11 @@ export const GifExpertApp = () => {
          {/* <button onClick={onAddCategory}>Agregar</button> */}
          <ol>
             {categories.map((category) => {
-               return <li key={category}>{category}</li>;
+               return (
+                  <div key={category}>
+                     <li>{category}</li>
+                  </div>
+               );
             })}
          </ol>
 
