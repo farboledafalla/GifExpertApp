@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Este warning se muestra porque no se han configurado prop-types para este prop, desde el archivo .eslintrc.cjs se configura
 export const AddCategory = ({ onNewCategory }) => {
@@ -44,4 +45,9 @@ export const AddCategory = ({ onNewCategory }) => {
          />
       </form>
    );
+};
+
+AddCategory.propTypes = {
+   // Definir que se espera una función
+   onNewCategory: PropTypes.func,
 };
